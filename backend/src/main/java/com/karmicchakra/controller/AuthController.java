@@ -5,7 +5,7 @@ import com.karmicchakra.dto.RegisterRequest;
 import com.karmicchakra.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import com.karmicchakra.dto.LoginRequest;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "http://localhost:5173")
@@ -22,6 +22,14 @@ public class AuthController {
             @RequestBody RegisterRequest request) {
 
         AuthResponse response = userService.register(request);
+
+        return ResponseEntity.ok(response);
+    }
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(
+            @RequestBody LoginRequest request) {
+
+        AuthResponse response = userService.login(request);
 
         return ResponseEntity.ok(response);
     }
