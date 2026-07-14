@@ -1,44 +1,65 @@
-import ReflectionCard from "./ReflectionCard";
+import { useEffect, useState } from "react";
+
+import { getHistory } from "../../services/dashboardService";
+
+import HistoryCard from "../history/HistoryCard";
+import { Link } from "react-router-dom";
 
 export default function ReflectionHistory() {
 
-  const reflections = [
+  const [history, setHistory] = useState([]);
 
-    {
-      title: "Argument with Brother",
-      score: 82,
-      date: "Today",
-    },
+  useEffect(() => {
 
-    {
-      title: "Career Decision",
-      score: 76,
-      date: "Yesterday",
-    },
+    async function loadHistory() {
 
-    {
-      title: "Helping a Friend",
-      score: 91,
-      date: "2 Days Ago",
-    },
+      try {
 
-  ];
+        const response = await getHistory();
+
+        // Show only the latest 3 reflections
+        setHistory(response.data.slice(0, 3));
+
+      } catch (error) {
+
+        console.error(error);
+
+      }
+
+    }
+
+    loadHistory();
+
+  }, []);
 
   return (
 
     <div className="mt-12">
 
-      <h2 className="text-3xl text-white font-bold mb-6">
-        Recent Reflections
-      </h2>
+      <div className="flex justify-between items-center mb-6">
 
-      <div className="grid md:grid-cols-3 gap-6">
+        <h2 className="text-3xl text-white font-bold">
+          Recent Reflections
+        </h2>
 
-        {reflections.map((item, index) => (
-          <ReflectionCard
+        <Link
+          to="/history"
+          className="text-yellow-400 hover:text-yellow-300 font-semibold"
+        >
+          View All →
+        </Link>
+
+      </div>
+
+      <div className="space-y-6">
+
+        {history.map((item, index) => (
+
+          <HistoryCard
             key={index}
-            {...item}
+            reflection={item}
           />
+
         ))}
 
       </div>
@@ -46,4 +67,5 @@ export default function ReflectionHistory() {
     </div>
 
   );
+
 }

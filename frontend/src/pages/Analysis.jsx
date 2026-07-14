@@ -5,11 +5,21 @@ import GitaVerse from "../components/analysis/GitaVerse";
 import KarmaScore from "../components/analysis/KarmaScore";
 import Recommendation from "../components/analysis/Recommendation";
 import ActionCards from "../components/analysis/ActionCards";
+
 import { useReflection } from "../context/ReflectionContext";
 
 export default function Analysis() {
-  const { situation } = useReflection();
-  console.log("Analysis Situation:", situation);
+
+  const { situation, analysis } = useReflection();
+
+  if (!analysis) {
+    return (
+      <div className="text-white text-center mt-20">
+        No analysis found.
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#060b1f]">
 
@@ -19,23 +29,24 @@ export default function Analysis() {
 
         <div className="grid lg:grid-cols-3 gap-8">
 
-          {/* Left Side */}
           <div className="lg:col-span-2 space-y-8">
 
             <SituationCard situation={situation} />
 
-            <EmotionCard />
+            <EmotionCard emotion={analysis.emotion} />
 
-            <GitaVerse />
+            <GitaVerse verse={analysis.gitaVerse} />
 
-            <Recommendation />
+            <Recommendation
+              explanation={analysis.explanation}
+              recommendation={analysis.recommendation}
+            />
 
           </div>
 
-          {/* Right Side */}
           <div className="space-y-8">
 
-            <KarmaScore />
+            <KarmaScore score={analysis.karmaScore} />
 
             <ActionCards />
 

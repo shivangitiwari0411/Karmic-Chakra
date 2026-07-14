@@ -1,6 +1,7 @@
 import { BookOpen } from "lucide-react";
 
-export default function GitaVerse() {
+export default function GitaVerse({ verse }) {
+
   return (
     <div className="bg-[#121a30] rounded-2xl border border-slate-700 p-6">
 
@@ -16,22 +17,11 @@ export default function GitaVerse() {
 
       <div className="bg-slate-900 rounded-xl p-5">
 
-        <p className="text-yellow-300 font-semibold mb-4">
-          Chapter 2 • Verse 47
-        </p>
-
         <p className="italic text-white leading-8">
-          "You have a right to perform your prescribed duties,
-          but you are not entitled to the fruits of your actions."
+          {verse}
         </p>
 
       </div>
-
-      <p className="mt-5 text-slate-300 leading-8">
-        Focus on performing your duty sincerely without becoming
-        attached to immediate outcomes. Acting with patience and
-        clarity often leads to better long-term results.
-      </p>
 
     </div>
   );

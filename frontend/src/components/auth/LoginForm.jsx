@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { loginUser } from "../../services/authService";
 function LoginForm() {
   const navigate = useNavigate();
 
@@ -19,11 +19,47 @@ function LoginForm() {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    alert("NEW LOGIN CODE");
 
-    // Backend integration later
-    navigate("/dashboard");
+    console.log("STEP 1");
+
+    try {
+
+      console.log("STEP 2");
+
+      const response = await loginUser(
+        form.email,
+        form.password
+      );
+
+      console.log("STEP 3");
+      console.log("FULL RESPONSE");
+      console.log(response);
+      console.log("RESPONSE DATA");
+      console.log(response.data);
+      console.log("TOKEN");
+      console.log(response.data.token);
+
+      localStorage.setItem(
+        "token",
+        response.data.token
+      );
+
+      console.log("STEP 4");
+
+      navigate("/dashboard");
+
+    } catch (error) {
+
+      console.log("STEP ERROR");
+
+      console.error(error);
+
+      alert("Login Failed");
+
+    }
   }
 
   return (

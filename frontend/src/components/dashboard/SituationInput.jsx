@@ -1,20 +1,29 @@
 import { Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useReflection } from "../../context/ReflectionContext";
-
+import { analyzeReflection } from "../../services/reflectionService";
 export default function SituationInput() {
   const navigate = useNavigate();
 
-  const { situation, setSituation } = useReflection();
+  const {
+    situation,
+    setSituation,
+    setAnalysis,
+  } = useReflection();
   console.log(situation);
 
-  function handleAnalyze() {
-    if (!situation.trim()) {
-      alert("Please describe your situation first.");
-      return;
-    }
+  async function handleAnalyze() {
 
-    navigate("/loading");
+    if (!situation.trim()) {
+
+      alert("Please describe your situation first.");
+
+      return;
+
+    }
+console.log("Analyze button clicked");
+navigate("/loading");
+
   }
 
   return (

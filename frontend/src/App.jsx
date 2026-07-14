@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Loading from "./pages/Loading";
+import History from "./pages/History";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/loading" element={<Loading />} />
+        <Route path="/history" element={<History />} />
       </Routes>
     </BrowserRouter>
   );

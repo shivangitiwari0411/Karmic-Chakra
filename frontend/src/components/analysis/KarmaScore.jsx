@@ -1,8 +1,6 @@
 import { TrendingUp } from "lucide-react";
 
-export default function KarmaScore() {
-
-  const score = 86;
+export default function KarmaScore({ score }) {
 
   return (
     <div className="bg-[#121a30] rounded-2xl border border-slate-700 p-6 text-center">
@@ -13,7 +11,7 @@ export default function KarmaScore() {
       />
 
       <h2 className="text-xl font-semibold text-yellow-400 mb-6">
-        Karmic Score
+        Karma Score
       </h2>
 
       <div className="w-40 h-40 rounded-full border-[10px] border-yellow-400 mx-auto flex items-center justify-center">
@@ -24,17 +22,11 @@ export default function KarmaScore() {
             {score}
           </h1>
 
-          <p className="text-slate-400">
-            /100
-          </p>
+          <p className="text-slate-400">/100</p>
 
         </div>
 
       </div>
-
-      <p className="mt-6 text-green-400 font-semibold text-lg">
-        Thoughtful Decision
-      </p>
 
     </div>
   );

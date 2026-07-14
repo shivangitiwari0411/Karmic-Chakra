@@ -1,5 +1,5 @@
 import { UserCircle, Home, History, LogOut } from "lucide-react";
-
+import { Link } from "react-router-dom";
 export default function DashboardNavbar() {
   return (
     <nav className="bg-[#0b1022] border-b border-slate-700">
@@ -19,7 +19,9 @@ export default function DashboardNavbar() {
 
           <button className="flex items-center gap-2 text-slate-300 hover:text-yellow-400 transition">
             <History size={18} />
-            History
+            <Link to="/history">
+              History
+            </Link>
           </button>
 
           <button className="flex items-center gap-2 text-slate-300 hover:text-yellow-400 transition">

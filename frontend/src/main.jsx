@@ -2,13 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-
+import { DashboardProvider } from "./context/DashboardContext";
 import { ReflectionProvider } from "./context/ReflectionContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ReflectionProvider>
-      <App />
-    </ReflectionProvider>
+    <DashboardProvider>
+        <ReflectionProvider>
+            <App />
+        </ReflectionProvider>
+    </DashboardProvider>
   </StrictMode>
 );

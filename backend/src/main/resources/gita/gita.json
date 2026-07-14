@@ -1,0 +1,62 @@
+[
+  {
+    "chapter": 2,
+    "verse": 47,
+    "emotion": "attachment",
+    "keywords": [
+      "expectation",
+      "result",
+      "career",
+      "parents",
+      "work",
+      "success"
+    ],
+    "translation": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions."
+  },
+  {
+    "chapter": 2,
+    "verse": 48,
+    "emotion": "stress",
+    "keywords": [
+      "stress",
+      "pressure",
+      "failure",
+      "exam"
+    ],
+    "translation": "Perform your duty with equanimity, abandoning attachment to success and failure."
+  },
+  {
+    "chapter": 2,
+    "verse": 62,
+    "emotion": "anger",
+    "keywords": [
+      "anger",
+      "fight",
+      "parents",
+      "relationship"
+    ],
+    "translation": "From attachment arises desire, from desire anger develops."
+  },
+  {
+    "chapter": 2,
+    "verse": 63,
+    "emotion": "anger",
+    "keywords": [
+      "anger",
+      "frustration",
+      "hate"
+    ],
+    "translation": "Anger leads to delusion, memory loss and ultimately destroys wisdom."
+  },
+  {
+    "chapter": 6,
+    "verse": 5,
+    "emotion": "self-improvement",
+    "keywords": [
+      "motivation",
+      "discipline",
+      "growth"
+    ],
+    "translation": "Elevate yourself through your own efforts and never degrade yourself."
+  }
+]

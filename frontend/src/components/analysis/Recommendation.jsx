@@ -1,6 +1,9 @@
 import { Lightbulb } from "lucide-react";
 
-export default function Recommendation() {
+export default function Recommendation({
+  explanation,
+  recommendation,
+}) {
 
   return (
     <div className="bg-[#121a30] rounded-2xl border border-slate-700 p-6">
@@ -15,17 +18,33 @@ export default function Recommendation() {
 
       </div>
 
-      <ul className="space-y-4 text-slate-300">
+      <div className="space-y-6">
 
-        <li>✅ Listen calmly before reacting.</li>
+        <div>
 
-        <li>✅ Speak honestly but respectfully.</li>
+          <h3 className="text-yellow-300 font-semibold mb-2">
+            Explanation
+          </h3>
 
-        <li>✅ Avoid making decisions while angry.</li>
+          <p className="text-slate-300 leading-7">
+            {explanation}
+          </p>
 
-        <li>✅ Focus on understanding instead of winning.</li>
+        </div>
 
-      </ul>
+        <div>
+
+          <h3 className="text-yellow-300 font-semibold mb-2">
+            Recommendation
+          </h3>
+
+          <p className="text-slate-300 leading-7">
+            {recommendation}
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
   );
