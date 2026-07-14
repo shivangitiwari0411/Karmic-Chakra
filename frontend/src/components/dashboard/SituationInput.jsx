@@ -17,12 +17,11 @@ export default function SituationInput() {
     if (!situation.trim()) {
 
       alert("Please describe your situation first.");
-
       return;
 
     }
-console.log("Analyze button clicked");
-navigate("/loading");
+
+    navigate("/loading");
 
   }
 
@@ -48,7 +47,10 @@ navigate("/loading");
       <div className="flex justify-end mt-6">
 
         <button
-          onClick={handleAnalyze}
+          onClick={() => {
+
+              handleAnalyze();
+            }}
           className="
             flex
             items-center

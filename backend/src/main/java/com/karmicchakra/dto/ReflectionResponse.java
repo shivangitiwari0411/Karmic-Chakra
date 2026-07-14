@@ -1,4 +1,5 @@
 package com.karmicchakra.dto;
+import java.util.List;
 
 public class ReflectionResponse {
 
@@ -10,8 +11,18 @@ public class ReflectionResponse {
     private String explanation;
 
     private String recommendation;
+    private List<String> retrievedVerses;
 
-    public ReflectionResponse() {
+    public ReflectionResponse(String emotion,
+                              Integer karmaScore,
+                              String gitaVerse,
+                              String explanation,
+                              String recommendation) {
+        this.emotion = emotion;
+        this.karmaScore = karmaScore;
+        this.gitaVerse = gitaVerse;
+        this.explanation = explanation;
+        this.recommendation = recommendation;
     }
 
     public ReflectionResponse(
@@ -19,13 +30,15 @@ public class ReflectionResponse {
             Integer karmaScore,
             String gitaVerse,
             String explanation,
-            String recommendation) {
+            String recommendation,
+              List<String> retrievedVerses) {
 
         this.emotion = emotion;
         this.karmaScore = karmaScore;
         this.gitaVerse = gitaVerse;
         this.recommendation = recommendation;
         this.explanation = explanation;
+        this.retrievedVerses = retrievedVerses;
     }
 
     public String getEmotion() {
@@ -65,5 +78,12 @@ public class ReflectionResponse {
 
     public void setExplanation(String explanation) {
         this.explanation = explanation;
+    }
+    public List<String> getRetrievedVerses() {
+        return retrievedVerses;
+    }
+
+    public void setRetrievedVerses(List<String> retrievedVerses) {
+        this.retrievedVerses = retrievedVerses;
     }
 }

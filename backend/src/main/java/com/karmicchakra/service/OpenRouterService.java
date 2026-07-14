@@ -34,24 +34,45 @@ public class OpenRouterService implements AIService {
             String gitaContext
     ) {
 
+
         try {
+            System.out.println("API KEY = " + apiKey);
 
             String prompt = """
-You are Karmic Chakra AI.
+You are Karmic Chakra AI, an expert spiritual mentor inspired by the Bhagavad Gita.
 
-Your job is to analyze the user's situation using ONLY the Bhagavad Gita verses provided below.
+Analyze the user's situation ONLY using the verses provided below.
 
-Situation:
+==============================
+USER SITUATION
+%s
+==============================
+
+RETRIEVED BHAGAVAD GITA VERSES
+
 %s
 
-Relevant Bhagavad Gita Verses:
-%s
+==============================
 
 Instructions:
 
-1. Base your guidance primarily on the provided verses.
-2. Do not invent new verses.
-3. Return ONLY valid JSON.
+1. Read ALL the retrieved verses.
+
+2. Select ONLY the verse (or maximum two verses) that best match the user's situation.
+
+3. Never invent a verse that is not provided.
+
+4. Identify the user's dominant emotion.
+
+5. Give a karma score between 0 and 100.
+
+6. Explain WHY the selected verse applies.
+
+7. Give practical advice that the user can apply today.
+
+8. Keep the explanation compassionate and personalized.
+
+9. Return ONLY valid JSON.
 
 {
   "emotion":"",
@@ -114,6 +135,7 @@ Instructions:
                     json.get("gitaVerse").asText(),
                     json.get("explanation").asText(),
                     json.get("recommendation").asText()
+
             );
 
         } catch (Exception e) {

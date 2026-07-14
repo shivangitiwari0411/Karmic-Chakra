@@ -20,6 +20,7 @@ import java.time.LocalDate;
 import java.util.Set;
 import java.util.TreeSet;
 
+
 import com.karmicchakra.dto.KarmaTrendResponse;
 
 
@@ -86,6 +87,17 @@ public class ReflectionService {
                         request.getSituation(),
                         context.toString()
                 );
+
+        List<String> retrievedVerses = verses.stream()
+                .map(v -> "Bhagavad Gita "
+                        + v.getChapter()
+                        + "."
+                        + v.getVerse()
+                        + " : "
+                        + v.getText())
+                .toList();
+
+        aiResponse.setRetrievedVerses(retrievedVerses);
 
 
         reflection.setEmotion(aiResponse.getEmotion());

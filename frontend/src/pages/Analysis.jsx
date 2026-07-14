@@ -5,6 +5,8 @@ import GitaVerse from "../components/analysis/GitaVerse";
 import KarmaScore from "../components/analysis/KarmaScore";
 import Recommendation from "../components/analysis/Recommendation";
 import ActionCards from "../components/analysis/ActionCards";
+import RetrievedVerses from "../components/analysis/RetrievedVerses";
+
 
 import { useReflection } from "../context/ReflectionContext";
 
@@ -37,9 +39,13 @@ export default function Analysis() {
 
             <GitaVerse verse={analysis.gitaVerse} />
 
+            <RetrievedVerses
+                verses={analysis.retrievedVerses}
+            />
+
             <Recommendation
-              explanation={analysis.explanation}
-              recommendation={analysis.recommendation}
+                explanation={analysis.explanation}
+                recommendation={analysis.recommendation}
             />
 
           </div>

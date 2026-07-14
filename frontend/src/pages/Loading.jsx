@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingAnimation from "../components/analysis/LoadingAnimation";
 import { useReflection } from "../context/ReflectionContext";
@@ -7,6 +7,7 @@ import { analyzeSituation } from "../services/reflectionService";
 export default function Loading() {
 
   const navigate = useNavigate();
+  const hasRun = useRef(false);
 
   const {
     situation,
@@ -15,35 +16,22 @@ export default function Loading() {
 
   useEffect(() => {
 
-    async function analyze() {
+      if (hasRun.current) return;
+      hasRun.current = true;
 
-      try {
-
-        console.log("Sending to backend...");
-        console.log(situation);
-
-        const response = await analyzeSituation(situation);
-
-        console.log("Backend Response:");
-        console.log(response.data);
-
-        setAnalysis(response.data);
-
-        navigate("/analysis");
-
-      } catch (error) {
-
-        console.error(error);
-
-        alert("Analysis Failed");
-
-        navigate("/dashboard");
-
+      async function analyze() {
+          try {
+              const response = await analyzeSituation(situation);
+              setAnalysis(response.data);
+              navigate("/analysis");
+          } catch (error) {
+              console.error(error);
+              alert("Analysis Failed");
+              navigate("/dashboard");
+          }
       }
 
-    }
-
-    analyze();
+      analyze();
 
   }, []);
 

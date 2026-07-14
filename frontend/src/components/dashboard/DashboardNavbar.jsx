@@ -1,6 +1,14 @@
 import { UserCircle, Home, History, LogOut } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function DashboardNavbar() {
+    const navigate = useNavigate();
+    function handleLogout() {
+
+        localStorage.removeItem("token");
+
+        navigate("/login");
+
+    }
   return (
     <nav className="bg-[#0b1022] border-b border-slate-700">
 
@@ -29,7 +37,10 @@ export default function DashboardNavbar() {
             Profile
           </button>
 
-          <button className="flex items-center gap-2 text-red-400 hover:text-red-300 transition">
+          <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 text-red-400 hover:text-red-300 transition"
+          >
             <LogOut size={18} />
             Logout
           </button>
