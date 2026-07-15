@@ -49,13 +49,15 @@ public class ReflectionService {
             ReflectionRequest request,
             String email
     ) {
+        System.out.println("STEP 1");
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-
+        System.out.println("STEP 2");
         Reflection reflection = new Reflection();
 
         reflection.setSituation(request.getSituation());
+
 
         // Dummy AI Response (will be replaced by Gemini later)
         List<GitaVerse> verses =
@@ -82,6 +84,7 @@ public class ReflectionService {
         }
 
 // REPLACE THE OLD LINE WITH THIS
+        System.out.println("STEP 3");
         ReflectionResponse aiResponse =
                 aiService.analyzeSituation(
                         request.getSituation(),
@@ -113,8 +116,10 @@ public class ReflectionService {
         reflection.setCreatedAt(LocalDateTime.now());
 
         reflection.setUser(user);
+        System.out.println("STEP 4");
 
         reflectionRepository.save(reflection);
+        System.out.println("STEP 5");
 
         return aiResponse;
     }
