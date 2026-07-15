@@ -25,11 +25,19 @@ public class ReflectionController {
     }
 
     @PostMapping("/analyze")
-    public ResponseEntity<String> analyze(Authentication authentication) {
+    public ResponseEntity<ReflectionResponse> analyze(
+            @RequestBody ReflectionRequest request,
+            Authentication authentication
+    ) {
 
         System.out.println("===== CONTROLLER HIT =====");
 
-        return ResponseEntity.ok("Controller reached");
+        String email = authentication.getName();
+
+        ReflectionResponse response =
+                reflectionService.analyzeReflection(request, email);
+
+        return ResponseEntity.ok(response);
     }
     @GetMapping("/history")
     public ResponseEntity<List<ReflectionHistoryResponse>> getHistory(
