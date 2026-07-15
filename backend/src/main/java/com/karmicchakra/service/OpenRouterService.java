@@ -104,7 +104,7 @@ Instructions:
 
             headers.setBearerAuth(apiKey);
 
-            headers.set("HTTP-Referer", "http://localhost:8080");
+            headers.set("HTTP-Referer", "https://karmic-chakra-backend.onrender.com");
 
             headers.set("X-Title", "Karmic Chakra");
 
@@ -191,7 +191,7 @@ Return ONLY plain text.
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
             headers.setBearerAuth(apiKey);
-            headers.set("HTTP-Referer", "http://localhost:8080");
+            headers.set("HTTP-Referer", "https://karmic-chakra-backend.onrender.com");
             headers.set("X-Title", "Karmic Chakra");
 
             HttpEntity<OpenRouterRequest> entity =
