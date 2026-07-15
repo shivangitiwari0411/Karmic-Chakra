@@ -21,11 +21,28 @@ export default function Loading() {
 
       async function analyze() {
           try {
+              console.log("Calling analyze API...");
+
               const response = await analyzeSituation(situation);
+
+              console.log("Full Axios Response:", response);
+              console.log("Response Data:", response.data);
+
               setAnalysis(response.data);
+
+              console.log("Analysis saved");
+
               navigate("/analysis");
+
           } catch (error) {
-              console.error(error);
+
+              console.log("ERROR:", error);
+
+              if (error.response) {
+                  console.log("Status:", error.response.status);
+                  console.log("Data:", error.response.data);
+              }
+
               alert("Analysis Failed");
               navigate("/dashboard");
           }
