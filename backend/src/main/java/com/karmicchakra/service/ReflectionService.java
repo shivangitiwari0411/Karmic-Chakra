@@ -49,6 +49,7 @@ public class ReflectionService {
             ReflectionRequest request,
             String email
     ) {
+        System.out.println("===== ReflectionService HIT =====");
         System.out.println("STEP 1");
 
         User user = userRepository.findByEmail(email)

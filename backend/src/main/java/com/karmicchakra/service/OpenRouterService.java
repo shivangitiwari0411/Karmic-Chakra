@@ -33,6 +33,7 @@ public class OpenRouterService implements AIService {
             String situation,
             String gitaContext
     ) {
+        System.out.println("===== OpenRouterService HIT =====");
 
 
         try {
