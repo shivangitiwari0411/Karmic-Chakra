@@ -1,4 +1,4 @@
-# 🕉️ Karmic Chakra – AI-Powered Bhagavad Gita Reflection Platform
+# 🕉️ Karmic Chakra – AI-powered decision intelligence platform inspired by Bhagavad Gita principles.
 
 Karmic Chakra is a full-stack AI-powered web application that helps users reflect on their daily life situations through the teachings of the Bhagavad Gita.
 
