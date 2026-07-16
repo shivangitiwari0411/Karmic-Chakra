@@ -150,7 +150,7 @@ Backend/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/shivangitiwari0411/Karmic-Chakra
 ```
 
 ---
@@ -260,10 +260,10 @@ B.Tech CSE Student
 VIT Bhopal University
 
 LinkedIn:
-(Add Link)
+https://www.linkedin.com/in/shivangi-tiwari0411/
 
 GitHub:
-(Add Link)
+https://github.com/shivangitiwari0411
 
 ---
 
