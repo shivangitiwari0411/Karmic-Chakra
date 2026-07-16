@@ -15,7 +15,7 @@ import com.karmicchakra.dto.StreakResponse;
 import com.karmicchakra.dto.KarmaDashboardResponse;
 @RestController
 @RequestMapping("/api/reflection")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class ReflectionController {
 
     private final ReflectionService reflectionService;
