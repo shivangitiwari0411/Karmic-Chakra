@@ -91,31 +91,31 @@ Database:
 
 ## Home Page
 
-(Add Screenshot Here)
+![Home](images/home.png)
 
 ---
 
 ## Login
 
-(Add Screenshot Here)
+![Login](images/login.png)
 
 ---
 
 ## Dashboard
 
-(Add Screenshot Here)
+![Dashboard](images/dashboard.png)
 
 ---
 
 ## AI Analysis
 
-(Add Screenshot Here)
+![Analysis](images/analysis.png)
 
 ---
 
 ## Reflection History
 
-(Add Screenshot Here)
+![Reflection](images/reflection.png)
 
 ---
 
